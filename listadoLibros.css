@@ -1,0 +1,19 @@
+html, body {
+    margin: 0;
+}
+
+/*Estilo de la navbar*/
+
+div.navbar {
+    background-color: #aaa;
+    padding: 15px;
+}
+
+
+
+/*Separa cada uno de los libros en la base de datos.*/
+div.contenedor-libro {
+    background-color: #ccc;
+    margin: 50px;
+    text-align: center;
+}
