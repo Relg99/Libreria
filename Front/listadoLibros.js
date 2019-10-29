@@ -26,7 +26,7 @@ xhr.onload = function () {
   }
   
 };
-xhr.open("POST", "/Skate/PHP/sketis/articulos_almacen.php", true);
+xhr.open("POST", "/Libreria/Back/obtenerDatosLibros.php", true);
 xhr.send();
 
 
@@ -42,6 +42,6 @@ function borrar(i){
   fd.append("number", i);
 
 
-  xhr.open("POST", "/Skate/PHP/sketis/borrar_articulo.php", true);
+  xhr.open("POST", "/Libreria/Back/borrarDatosLibros.php", true);
   xhr.send(fd);
   }
