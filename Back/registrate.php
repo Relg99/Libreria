@@ -12,4 +12,5 @@ or die("No se pudo subir");
 
 header('Location: /libreria/Front/login.html');
 
+mysqli_close ($conexion);
 ?>
