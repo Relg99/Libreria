@@ -9,4 +9,5 @@ or die("No se pudo subir");
 
 header('Location: /libreria/Front/listadoLibros.html');
 
+mysqli_close ($conexion);
 ?>
