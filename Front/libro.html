@@ -5,13 +5,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Libro</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="listadoLibros.js"></script>
 
     </head>
-    <body>
+    <body onload="verDatos()">
         <h1>Libro: </h1>
         <h2>Autor: </h2>
         <h3>Comentarios: </h3>
         <textarea name="comentarios" rows="10" cols="40">Escribe aquí tus comentarios</textarea>
+
+        <div id="insertar-comentarios">
+            <!--Aqui se insertan todos los comentarios -->
+        </div>
         <button>Comentar</button>
     </body>
 </html>

@@ -1,3 +1,5 @@
+
+function listadoLibros(){
 var objeto;
 const xhr = new XMLHttpRequest();
 xhr.onload = function () {
@@ -19,6 +21,13 @@ xhr.onload = function () {
               </button>
         </form>
 
+        <form OnSubmit="verDatos(${i})" method="POST">
+       
+              <button type="submit">
+                    Ver Info
+              </button>
+        </form>
+
         </div>
 
         
@@ -28,6 +37,7 @@ xhr.onload = function () {
 };
 xhr.open("POST", "/Libreria/Back/obtenerDatosLibros.php", true);
 xhr.send();
+}
 
 
 function borrar(i){
@@ -45,3 +55,23 @@ function borrar(i){
   xhr.open("POST", "/Libreria/Back/borrarDatosLibros.php", true);
   xhr.send(fd);
   }
+
+
+  function verDatos(i){
+    window.open("/Libreria/Front/libro.html");
+
+    var objet;
+    const xhrd = new XMLHttpRequest();
+    xhrd.onload = function () {
+      console.log(this.responseText);
+      objet = JSON.parse(this.responseText);
+    }
+    
+    var fd = new FormData();
+    fd.append("number", i);
+  
+  
+    xhr.open("POST", "/Libreria/Back/mostrarInfoLibro.php", true);
+    xhr.send(fd);
+
+  } 
