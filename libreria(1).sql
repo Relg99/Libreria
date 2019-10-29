@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2019 a las 20:00:53
--- Versión del servidor: 10.3.16-MariaDB
--- Versión de PHP: 7.3.7
+-- Tiempo de generación: 29-10-2019 a las 20:20:11
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -92,17 +90,20 @@ CREATE TABLE `usuario` (
   `ApellidoPaterno` varchar(70) DEFAULT NULL,
   `ApellidoMaterno` varchar(70) DEFAULT NULL,
   `nick` varchar(50) DEFAULT NULL,
-  `password` varchar(10) DEFAULT NULL
+  `password` varchar(10) DEFAULT NULL,
+  `Login` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Usuario_ID`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `nick`, `password`) VALUES
-(1, 'Ricardo', 'Alfonso', 'Martinez', 'Richi', '1234'),
-(2, 'Mario', 'Guillermino', 'Opresor', 'Trunco', '1234'),
-(3, 'Andre', 'Blas', 'Monterrubio', 'Novato', '1234');
+INSERT INTO `usuario` (`Usuario_ID`, `Nombre`, `ApellidoPaterno`, `ApellidoMaterno`, `nick`, `password`, `Login`) VALUES
+(1, 'Ricardo', 'Alfonso', 'Martinez', 'Richi', '1234', 0),
+(2, 'Mario', 'Guillermino', 'Opresor', 'Trunco', '1234', 0),
+(3, 'Andre', 'Blas', 'Monterrubio', 'Novato', '1234', 0),
+(4, 'Alan', 'Lomeli', 'Polla', 'Alana', '123', 0),
+(5, 'Alan', 'Lomelis', 'Polla2', 'Alanaza', '123', 0);
 
 --
 -- Índices para tablas volcadas
@@ -137,19 +138,16 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `comentario`
   MODIFY `ID_Comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT de la tabla `libro`
 --
 ALTER TABLE `libro`
   MODIFY `Libro_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Usuario_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `Usuario_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Restricciones para tablas volcadas
 --
@@ -161,7 +159,6 @@ ALTER TABLE `comentario`
   ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`FK_User`) REFERENCES `usuario` (`Usuario_ID`),
   ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`FK_Libro`) REFERENCES `libro` (`Libro_ID`),
   ADD CONSTRAINT `comentario_ibfk_3` FOREIGN KEY (`FK_User`) REFERENCES `usuario` (`Usuario_ID`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
