@@ -42,6 +42,6 @@ function borrar(i){
   fd.append("number", i);
 
 
-  xhr.open("POST", "/Skate/PHP/sketis/borrar_articulo.php", true);
+  xhr.open("POST", "/Libreria/Back/borrarDatosLibros.php", true);
   xhr.send(fd);
   }
