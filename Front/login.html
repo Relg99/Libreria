@@ -9,18 +9,22 @@
     <title>Login</title>
 </head>
 <body>
-    
-            <div class="formulario">
-                    <h1 class="titulo">LOGIN</h1>
-                    <label for="Nickname">Nickname</label><br>
-                    <input type="text" name="correo" id="nombre"  required="required"><br>
-                    <label for="Contra">Contraseña</label><br>
-                    <input type="password" name="password" id="password"  required="required"><br>
-                    <p>
-                        <a href="registrate.html">Regístrate</a>
-                    </p>
-                    <button style="background: antiquewhite;">Iniciar Sesion</button>
-                </div>
+        <form action="/Libreria/Back/iniciarSesion.php" method="post">
+                <div class="formulario">
+                        <h1 class="titulo">LOGIN</h1>
+                        <label for="Nickname">Nickname</label><br>
+                        <input type="text" name="nombre" id="nombre"  required="required"><br>
+                        <label for="Contra">Contraseña</label><br>
+                        <input type="password" name="password" id="password"  required="required"><br>
+                        <p>
+                            <a href="registrate.html">Regístrate</a>
+                        </p>
+                        <button style="background: antiquewhite;">Iniciar Sesion</button>
+                    </div>
+        </form>
+            
+
+
 
    
     
